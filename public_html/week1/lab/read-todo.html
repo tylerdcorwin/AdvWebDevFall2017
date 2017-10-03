@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Ajax Fetch</div>
+        <script type="text/javascript">
+            
+                      
+            let myRequest = 'todo.json'
+            
+            fetch(myRequest)
+            .then(function(response) {              
+                  return response.json()               
+            })
+            .then(function(json) { 
+                console.log(json)
+            })
+           
+
+            
+            
+//            let div = document.querySelector('div');
+//            //let htmlStr = '';
+//            let todo = 'http://localhost:3000/todo';
+//            //let todo = 'todo.json';
+//            
+//            fetch(todo).then(function(response){
+//                return response.json();
+//            }).then(function(myJson){
+//                var objectUrl = URL.createObjectURL(myJson);
+//                todo.src = objectUrl;
+//                var htmlStr = '';
+//                var arr = todo.split('false');
+//                for (var i = 0; i < arr.length; i++){
+//                    htmlStr += '<p>';
+//                    htmlStr += arr[i];
+//                    htmlStr += '</p>';
+//                }
+//                div.innerHTML += htmlStr;
+//            })
+//
+//            ;
+//            
+////            var htmlStr = '';
+//////            var test = '<p>' + arr[i] + '</p>';
+////            var arr = todo.split('},');
+////            for (var i = 0; i < arr.length; i++){
+////                htmlStr += '<p>';
+////                htmlStr += arr[i];
+////                htmlStr += '</p>';
+////            }
+////            div.innerHTML += htmlStr;
+////            
+            
+            
+            
+        </script>
+        
+    </body>
+</html>
