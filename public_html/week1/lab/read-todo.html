@@ -14,52 +14,52 @@ and open the template in the editor.
         <div>Ajax Fetch</div>
         <script type="text/javascript">
             
-                      
-            let myRequest = 'todo.json'
-            
-            fetch(myRequest)
-            .then(function(response) {              
-                  return response.json()               
-            })
-            .then(function(json) { 
-                console.log(json)
-            })
-           
+//                      
+//            let myRequest = 'todo.json'
+//            
+//            fetch(myRequest)
+//            .then(function(response) {              
+//                  return response.json()               
+//            })
+//            .then(function(json) { 
+//                console.log(json)
+//            })
+//           
 
             
             
-//            let div = document.querySelector('div');
-//            //let htmlStr = '';
-//            let todo = 'http://localhost:3000/todo';
-//            //let todo = 'todo.json';
-//            
-//            fetch(todo).then(function(response){
-//                return response.json();
-//            }).then(function(myJson){
-//                var objectUrl = URL.createObjectURL(myJson);
-//                todo.src = objectUrl;
-//                var htmlStr = '';
-//                var arr = todo.split('false');
-//                for (var i = 0; i < arr.length; i++){
-//                    htmlStr += '<p>';
-//                    htmlStr += arr[i];
-//                    htmlStr += '</p>';
-//                }
-//                div.innerHTML += htmlStr;
-//            })
-//
-//            ;
-//            
-////            var htmlStr = '';
-//////            var test = '<p>' + arr[i] + '</p>';
-////            var arr = todo.split('},');
-////            for (var i = 0; i < arr.length; i++){
-////                htmlStr += '<p>';
-////                htmlStr += arr[i];
-////                htmlStr += '</p>';
-////            }
-////            div.innerHTML += htmlStr;
-////            
+            let div = document.querySelector('div');
+            //let htmlStr = '';
+            let todo = 'http://localhost:3000/todo';
+            //let todo = 'todo.json';
+            
+            fetch(todo).then(function(response){
+                return response.json();
+            }).then(function(myJson){
+                var objectUrl = URL.createObjectURL(myJson);
+                todo.src = objectUrl;
+                var htmlStr = '';
+                var arr = myJson.split('false');
+                for (var i = 0; i < arr.length; i++){
+                    htmlStr += '<p>';
+                    htmlStr += arr[i];
+                    htmlStr += '</p>';
+                }
+                div.innerHTML += htmlStr;
+            })
+
+            ;
+            
+//            var htmlStr = '';
+//            var test = '<p>' + arr[i] + '</p>';
+//            var arr = todo.split('},');
+//            for (var i = 0; i < arr.length; i++){
+//                htmlStr += '<p>';
+//                htmlStr += arr[i];
+//                htmlStr += '</p>';
+//            }
+//            div.innerHTML += htmlStr;
+            
             
             
             

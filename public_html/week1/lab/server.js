@@ -15,7 +15,7 @@ http.createServer(function (request, response) {
     } if ( fileName === 'todo'){
       fileName = 'todo.json';
     } if (fileName === 'read-todo'){
-        fileName = 'fetch.html';
+        fileName = 'read-todo.html';
     }
 //    } else {
 //        fileName = 'index.html';
@@ -52,7 +52,7 @@ http.createServer(function (request, response) {
                 response.writeHead(200, {'Content-Type': 'application/json'});
                 response.write(data.toString());
                 response.end('todo');
-            } if ( fileName === 'fetch.html'){
+            } if ( fileName === 'read-todo.html'){
                 response.writeHead(200, {'Content-Type': 'text/html'});
                 response.write(data.toString());
                 response.end();
