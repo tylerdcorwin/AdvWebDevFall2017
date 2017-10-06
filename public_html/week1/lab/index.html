@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-        <style>
-            .wrapper{
-                background-color: #D4D4D4;
 
-            }
-            .title{
-                color: black;
-                font-size: 38px;
-                font-weight: bold;
-            }
-            .likes{
-                color: aqua;
-                font-size: 20px;
-                font-style: italic;
-            }
-            .links{
-                background-color: #FFDEAD;
-            }
-        </style>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="title">Tyler Corwin</div>
-            <div class="likes">
-                <ol>
-                    <li>Playing with my son</li>
-                    <li>Coding</li>
-                    <li>Snowboarding</li>
-                </ol>
-            </div>
-            <div class="links">
-                <ul>
-                    <li><a href="todo">To Todo Page!</a></li>
-                    <li><a href="read-todo">Read Todo Page (AJAX)</a></li>
-                </ul>
-            </div>
-        </div>
-    </body>
+<head>
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  <title>Tyler Corwin</title>
+  <style>
+  /*style.css*/
+  .wrapper{
+      background-color: #D4d3d2;
+      background-image: url("wrapper-bg.png");
+      background-repeat: no-repeat;
+      position: relative;
+      display: inline-block;
+      width: 80%;
+      height: 700px;
+      background-position-y: -215px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  .title{
+      color: #111;
+      font-size: 38px;
+      font-weight: bold;
+      text-align: center;
+      padding-top:50px;
+  }
+  .likes{
+      color: #111;
+      font-size: 20px;
+      font-style: italic;
+      margin-left: 40%;
+      width: 100%;
+  }
+  .links{
+      background-color: transparent;
+      display: flex;
+      justify-content: space-evenly;
+  }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title">
+      <h1>Tyler Corwin</h1>
+      <img src="Family.png" alt="Things I Love" />
+    </div>
+    <div class="likes">
+      <ol>
+        <li>Playing with my son</li>
+        <li>Hanging with my Wife</li>
+        <li>Coding</li>
+      </ol>
+    </div>
+    <div class="links">
+      <a href="todo">To Todo Page!</a>
+      <a href="read-todo">Read Todo Page (AJAX)</a>
+    </div>
+  </div>
+</body>
+
 </html>
