@@ -5,65 +5,35 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>Ajax Fetch</div>
-        <script type="text/javascript">
-            
-//                      
-//            let myRequest = 'todo.json'
-//            
-//            fetch(myRequest)
-//            .then(function(response) {              
-//                  return response.json()               
-//            })
-//            .then(function(json) { 
-//                console.log(json)
-//            })
-//           
 
-            
-            
-            let div = document.querySelector('div');
-            //let htmlStr = '';
-            let todo = 'http://localhost:3000/todo';
-            //let todo = 'todo.json';
-            
-            fetch(todo).then(function(response){
-                return response.json();
-            }).then(function(myJson){
-                var objectUrl = URL.createObjectURL(myJson);
-                todo.src = objectUrl;
-                var htmlStr = '';
-                var arr = myJson.split('false');
-                for (var i = 0; i < arr.length; i++){
-                    htmlStr += '<p>';
-                    htmlStr += arr[i];
-                    htmlStr += '</p>';
-                }
-                div.innerHTML += htmlStr;
-            })
+<head>
+  <title>TODO supply a title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-            ;
-            
-//            var htmlStr = '';
-//            var test = '<p>' + arr[i] + '</p>';
-//            var arr = todo.split('},');
-//            for (var i = 0; i < arr.length; i++){
-//                htmlStr += '<p>';
-//                htmlStr += arr[i];
-//                htmlStr += '</p>';
-//            }
-//            div.innerHTML += htmlStr;
-            
-            
-            
-            
-        </script>
-        
-    </body>
+<body>
+  <div>Ajax Fetch</div>
+  <script type="text/javascript">
+    let div = document.querySelector('div');
+    let htmlStr = '';
+    let myRequest = 'http://localhost:3000/todo';
+    fetch(myRequest).then(function(response){
+      return response.json()
+    }).then(function(json){
+      for (var i = 0; i < json.length; i++){
+        htmlStr += '<p>';
+        htmlStr += json[i].userId + " ";
+        htmlStr += json[i].id + " ";
+        htmlStr += json[i].title + " ";
+        htmlStr += json[i].completed + " ";
+        htmlStr += '</p>';
+      }
+      div.innerHTML += htmlStr;
+      console.log(json);
+    });
+  </script>
+
+</body>
+
 </html>
