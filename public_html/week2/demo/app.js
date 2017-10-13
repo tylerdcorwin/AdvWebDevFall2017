@@ -1,14 +1,16 @@
-var express = require('express');
-var path = require('path');
+var express = require('express');      //This is what hosts the server
+var path = require('path');            //This is the path
 var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var logger = require('morgan');        //This is only meant as a middle-ware (things that happen in between the request and response)
+var cookieParser = require('cookie-parser'); //handles all cookies
+var bodyParser = require('body-parser');  //handles all form data
+
+var debug = require('debug')('demo:app'); //if you want to output anything use debug not logger (EXAM QUESTION)
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
+var app = express();    //Start the app and set up uses
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use(function (req, res, next) {
+  debug('Time:', Date.now());
+  next();
+});
+
+app.use('/', index); //assumes that what is being grabbed is a js file
 app.use('/users', users);
 
 // catch 404 and forward to error handler

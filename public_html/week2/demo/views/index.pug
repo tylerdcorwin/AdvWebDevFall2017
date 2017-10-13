@@ -3,3 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  //these are all ways to display the info in msg, creating a class
+  //pug is different from many other code styles, its similar to python
+  //make sure to look into pug color coding for atom.....
+  .message= msg
+  .message #{msg}
+  span.message #{msg}
