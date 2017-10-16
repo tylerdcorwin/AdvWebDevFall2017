@@ -4,19 +4,52 @@ body {
   background-color: #00b7ff
 
 }
+h1, p, h2 {
+  text-align: center;
+}
 
 a {
   color: #fff;
 }
+.con {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.form-con {
+  margin-left: 43%
+}
+
 .family {
   display: flex;
   float: left;
-  width: 25%;
+  justify-content: center;
 }
-.nav{
-  padding-right: 30px;
+.nav-con {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.hero-img{
+  display: flex;
+  position: relative;
   float: left;
+  width: 100%;
+  margin-left: 25%;
+}
+.nav {
+  justify-content: center;
+  float: left;
+  display: block;
+  padding: 8px;
+  background-color: #a03616;
+  border: 1px solid black;
 }
 .message{
-  width: 25%
+  width: 50%;
+  margin-left: 25%;
 }

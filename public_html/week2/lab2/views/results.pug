@@ -1,12 +1,16 @@
 extends layout
 
 block content
-  a(href='/form' class='nav') Form
-  a(href='/about' class='nav') About
-  a(href='/index' class='nav') Home
+  div(class="nav-con")
+    a(href='/form' class='nav') Form
+    a(href='/about' class='nav') About
+    a(href='/index' class='nav') Home
+  <br/>
+  <br/>
+  <br/>
   h1 Name:
   h2= name
   h1 Email:
   h2= email
   h1 Message:
-  h3= messages
+  h2= messages

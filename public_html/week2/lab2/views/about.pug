@@ -3,9 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  a(href='/form' class='nav') Form
-  a(href='/about' class='nav') About
-  a(href='/index' class='nav') Home
+  div(class="nav-con")
+    a(href='/form' class='nav') Form
+    a(href='/about' class='nav') About
+    a(href='/index' class='nav') Home
   <br />
-  img(src="/images/shelly_me.jpg" class='family')
+  <br/>
+  <br/>
+  div(class="hero-img")
+    img(src="/images/shelly_me.jpg" class='family')
   .message= msg
