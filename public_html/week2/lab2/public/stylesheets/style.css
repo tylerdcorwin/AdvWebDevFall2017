@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #00b7ff
+
+}
+
+a {
+  color: #fff;
+}
+.family {
+  display: flex;
+  float: left;
+  width: 25%;
+}
+.nav{
+  padding-right: 30px;
+  float: left;
+}
+.message{
+  width: 25%
+}
