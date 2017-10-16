@@ -2,8 +2,8 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #00b7ff
-
 }
+
 h1, p, h2 {
   text-align: center;
 }
@@ -11,6 +11,7 @@ h1, p, h2 {
 a {
   color: #fff;
 }
+
 .con {
   width: 100%;
   margin-left: auto;
@@ -20,6 +21,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .form-con {
   margin-left: 43%
 }
@@ -28,12 +30,15 @@ a {
   display: flex;
   float: left;
   justify-content: center;
+  padding-left: 60px;
 }
+
 .nav-con {
   display: flex;
   width: 100%;
   justify-content: center;
 }
+
 .hero-img{
   display: flex;
   position: relative;
@@ -41,6 +46,7 @@ a {
   width: 100%;
   margin-left: 25%;
 }
+
 .nav {
   justify-content: center;
   float: left;
@@ -49,6 +55,7 @@ a {
   background-color: #a03616;
   border: 1px solid black;
 }
+
 .message{
   width: 50%;
   margin-left: 25%;
