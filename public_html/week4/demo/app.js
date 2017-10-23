@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-require('./db');
+require('./db'); //This connects to the mogo DB
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -44,5 +44,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+require('express-debug')(app); //added from Readme with the node debug option
+//creates EDT on the right side of the page
 
 module.exports = app;

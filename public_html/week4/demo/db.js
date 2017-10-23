@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var debug = require('debug')('demo:mongo');
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/Reviews';
-if (process.env.NODE_ENV === 'production') {
-    dbURI = process.env.MONGOLAB_URI;
+var dbURI = 'mongodb://localhost/Reviews'; //the reviews portion creates the database for you
+if (process.env.NODE_ENV === 'production') { //make sure to change the /Reviews to whatever you want the
+    dbURI = process.env.MONGOLAB_URI; //new DB to be
 }
 
 mongoose.connect(dbURI, {
