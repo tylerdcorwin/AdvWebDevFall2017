@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  
+  input(type="text" name="colorNo" placeholder="Pick Color Number")
+  button Submit
+  
+  mixin colorPicker(colorNo)
+    .color-picker
+      table
+        tbody
+          tr
+            td foo
+            td bar
+          tr 
+            td bar
+            td baz
+          tr
+            td baz
+            td foo 
+  +colorPicker(3)
