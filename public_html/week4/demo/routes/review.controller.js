@@ -9,7 +9,7 @@ module.exports.home = function(req, res) {
     var msg = '';
     //make a json object with these params
     Review.create({
-        author: req.body.name,
+        author: req.body.name, //these come from the pug file
         rating: req.body.rating,
         reviewText: req.body.review
       })

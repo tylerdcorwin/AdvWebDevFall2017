@@ -4,16 +4,13 @@ block content
   h1= title
   p Welcome to #{title}
   
-  input(type="text" name="colorNo" placeholder="Pick Color Number")
-  button Submit
-  
   .wrapper
     form(method='POST', action='/index', role='form')
-      .frm
-        select(name="number" placeholder='pick a color number')
-          option(vlaue='0', disabled, selected=true)
-          each value in [3,4,5,10,20]
-            option = value
-    button(type='submit') Submit
-    +colorPicker(numberChosen)
+      div.frm
+        select(name="number")
+          option(value='0', disabled, selected=true)
+          each val in [3,4,5,10,20]
+            option= val
+      button(type='submit') Submit
+    +colorPicker(num)
   
