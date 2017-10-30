@@ -9,27 +9,32 @@ block content
         table(border="1")
             thead   
                 tr
-                    th author
-                    th rating
-                    th reviewText
-                    th createdOn
+                    th First Name
+                    th Last Name
+                    th Department
+                    th Start Date
+                    th Job Title
+                    th Salary
                     th
                     th
             tbody
               each stuff in results
                 tr
                     td 
-                        =stuff.author
+                        =stuff.fName
                     td 
-                        =stuff.rating
+                        =stuff.lName
                     td 
-                        =stuff.reviewText
+                        =stuff.department
                     td 
-                        =stuff.createdOn.toDateString()
+                        =stuff.startDate.toDateString()
+                    td
+                        =stuff.jobTitle
+                    td
+                        =stuff.salary
                     td
                         a(href="../update/"+stuff._id) Update
                     td
                         a(href="../delete/"+stuff._id) Delete 
-                        //-updated to ../delete/ from ../view/
     else
         p No results found

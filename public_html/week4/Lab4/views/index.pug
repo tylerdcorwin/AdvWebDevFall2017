@@ -7,20 +7,29 @@ block content
   h2=message
   form.form-horizontal(action="/", method="post", role="form")
         .form-group
-          label.control-label(for="name") First Name
+          label.control-label(for="fname") First Name
           .col
-            input#name.form-control(name="fname")
+            input#fname.form-control(name="fname")
+          label.control-label(for="lname") Last Name
+          .col
+            input#lname.form-control(name="lname")
         .form-group
-          label.control-label(for="rating") Rating
+          label.control-label(for="department") Department
           .col
-            select#rating.form-control.input-sm(name="rating")
-              option 5
-              option 4
-              option 3
-              option 2
-              option 1
+            select#department.form-control.input-sm(name="department")
+              option IT
+              option Sales
+              option HR
         .form-group
-          label.control-label(for="review") Review
+          label.control-label(for="startDate") Start Date
           .col
-            textarea#review.form-control(name="review", rows="5")
-        input(type="submit" value="Add my review") 
+            input#startDate.form-control(type="date", name="startDate")
+        .form-group
+          label.control-label(for="jobTitle") Job Title
+          .col
+            input#jobTitle.form-control(name="jobTitle")
+          label.control-label(for="salary") Salary
+          .col
+            input#salary.form-control(name="salary", type="number", min="0.00", max="1000000.00", step="1000.00")
+          .col#submit
+            input(type="submit" value="Submit") 
