@@ -3,6 +3,14 @@ var debug = require('debug')('demo:review');
 module.exports.home = function(req, res) {
   if (req.method === 'POST') {
     var msg = '';
+    req.checkBody("fname", "Please enter a first name").notEmpty();
+    req.checkBody("lname", "Please enter a last name").notEmpty();;
+    req.checkBody("department", "Please enter a department").notEmpty();
+    req.checkBody("startDate", "Please enter a start date").notEmpty();
+    req.checkBody("jobTitle", "Please enter a job title").notEmpty();
+    req.checkBody("salary", "Please enter a salary").notEmpty();    
+    var errors = req.validationErrors();
+    console.log(errors);
     Review.create({
         fName: req.body.fname,
         lName: req.body.lname,
@@ -22,7 +30,7 @@ module.exports.home = function(req, res) {
         res.render('index', {
           title: 'Employee',
           message: msg,
-          error: err
+          errors: errors
         });
       });
   } else {

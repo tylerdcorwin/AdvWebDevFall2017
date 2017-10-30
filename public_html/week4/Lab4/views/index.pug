@@ -5,6 +5,10 @@ block content
   p
     a(href="./view") View
   h2=message
+  if errors 
+    ul
+      for error in errors
+          li= error.msg
   form.form-horizontal(action="/", method="post", role="form")
         .form-group
           label.control-label(for="fname") First Name
