@@ -8,9 +8,18 @@ module.exports.home = function(req, res) {
     req.checkBody("department", "Please enter a department").notEmpty();
     req.checkBody("startDate", "Please enter a start date").notEmpty();
     req.checkBody("jobTitle", "Please enter a job title").notEmpty();
-    req.checkBody("salary", "Please enter a salary").notEmpty();    
+    req.checkBody("salary", "Please enter a salary").notEmpty();
     var errors = req.validationErrors();
     console.log(errors);
+
+    // if(errors.length > 0){
+    //   res.render('index', {
+    //     title: 'Index',
+    //     message: ''.
+    //     errors: errors
+    //   });
+    // }
+
     Review.create({
         fName: req.body.fname,
         lName: req.body.lname,
