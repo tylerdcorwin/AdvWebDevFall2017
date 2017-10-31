@@ -50,7 +50,7 @@ module.exports.reviewsReadOne = function(req, res) {
 module.exports.reviewsCreate = function(req, res) {
 
     debug('Creating a review with data ', req.body);
-
+    //TODO: fix this
     Review.create({
           author: req.body.author,
           rating: req.body.rating,

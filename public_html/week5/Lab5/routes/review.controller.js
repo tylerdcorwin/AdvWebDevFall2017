@@ -52,9 +52,12 @@ module.exports.reviewsCreate = function(req, res) {
     debug('Creating a review with data ', req.body);
 
     Review.create({
-          author: req.body.author,
-          rating: req.body.rating,
-          reviewText: req.body.reviewText
+        fname: req.body.fname,
+        lname: req.body.lname,
+        department: req.body.department,
+        startDate: req.body.startDate,
+        jobTitle: req.body.jobTitle,
+        salary: req.body.salary
     })
     .then(function(dataSaved){
         debug(dataSaved);
@@ -76,14 +79,16 @@ module.exports.reviewsUpdateOne = function(req, res) {
     return;
   }
 
-  //TODO:Change this to match api
   Review
     .findById(req.params.reviewid)
     .exec()
     .then(function(reviewData) {
-        reviewData.author = req.body.author;
-        reviewData.rating = req.body.rating;
-        reviewData.reviewText = req.body.reviewText;
+        reviewData.fName = req.body.fname;
+        reviewData.lName = req.body.lname;
+        reviewData.department = req.body.department;
+        reviewData.startDate = req.body.startDate;
+        reviewData.jobTitle = req.body.jobTitle;
+        reviewData.salary = req.body.salary;
 
         return reviewData.save();
     })

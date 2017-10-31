@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var debug = require('debug')('demo:mongo');
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/Reviews';//TODO: change this to employees
+var dbURI = 'mongodb://localhost/Employee';
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGOLAB_URI;
 }

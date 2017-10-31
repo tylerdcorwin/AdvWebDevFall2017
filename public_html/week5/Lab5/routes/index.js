@@ -3,11 +3,11 @@ var router = express.Router();
 var ctrlReviews = require('./review.controller');
 
 // reviews
-router.get('/reviews', ctrlReviews.reviewsReadAll);
-router.get('/reviews/:reviewid', ctrlReviews.reviewsReadOne);
-router.post('/reviews', ctrlReviews.reviewsCreate);
-router.put('/reviews/:reviewid', ctrlReviews.reviewsUpdateOne);
-router.delete('/reviews/:reviewid', ctrlReviews.reviewsDeleteOne);
+router.get('/Employee', ctrlReviews.reviewsReadAll);
+router.get('/Employee/:reviewid', ctrlReviews.reviewsReadOne);
+router.post('/Employee', ctrlReviews.reviewsCreate);
+router.put('/Employee/:reviewid', ctrlReviews.reviewsUpdateOne);
+router.delete('/Employee/:reviewid', ctrlReviews.reviewsDeleteOne);
 
 
 module.exports = router;
