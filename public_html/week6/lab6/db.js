@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var debug = require('debug')('demo:mongo');
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/Reviews'; //change this for lab
+var dbURI = 'mongodb://localhost/Employee';
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGOLAB_URI;
 }
@@ -19,7 +19,7 @@ mongoose.connection.on('connected', function() {
 });
 mongoose.connection.on('error', function(err) {
     debug('Mongoose connection error: ' + err);
-     process.exit(0);
+    process.exit(0);
 });
 mongoose.connection.on('disconnected', function() {
     debug('Mongoose disconnected');
