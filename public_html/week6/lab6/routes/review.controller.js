@@ -7,10 +7,9 @@ function sendJSONresponse(res, status, content) {
 };
 
 module.exports.reviewsReadAll = function(req, res) {
-
     debug('Getting all reviews');
     Review
-     .find()
+     .find(req.where, null, req.options)
      .exec()
      .then(function(results){
         sendJSONresponse(res, 200, results);
@@ -22,7 +21,6 @@ module.exports.reviewsReadAll = function(req, res) {
 };
 
 module.exports.reviewsReadOne = function(req, res) {
-
     if (req.params && req.params.reviewid) {
         debug('Getting single review with id =', req.params.reviewid );
 
@@ -44,9 +42,6 @@ module.exports.reviewsReadOne = function(req, res) {
     }
 };
 
-/*   POST a new review
- *   /api/v1/reviews
- */
 module.exports.reviewsCreate = function(req, res) {
 
     debug('Creating a review with data ', req.body);
@@ -71,14 +66,12 @@ module.exports.reviewsCreate = function(req, res) {
 };
 
 module.exports.reviewsUpdateOne = function(req, res) {
-
   if ( !req.params.reviewid ) {
     sendJSONresponse(res, 404, {
         "message": "Not found, reviewid is required"
     });
     return;
   }
-
   Review
     .findById(req.params.reviewid)
     .exec()
@@ -89,7 +82,6 @@ module.exports.reviewsUpdateOne = function(req, res) {
         reviewData.startDate = req.body.startDate;
         reviewData.jobTitle = req.body.jobTitle;
         reviewData.salary = req.body.salary;
-
         return reviewData.save();
     })
     .then(function(data){
@@ -98,7 +90,6 @@ module.exports.reviewsUpdateOne = function(req, res) {
     .catch(function(err){
         sendJSONresponse(res, 400, err);
     });
-
 };
 
 module.exports.reviewsDeleteOne = function(req, res) {
@@ -108,7 +99,6 @@ module.exports.reviewsDeleteOne = function(req, res) {
     });
     return;
   }
-
   Review
     .findByIdAndRemove(req.params.reviewid)
     .exec()

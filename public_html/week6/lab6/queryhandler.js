@@ -15,15 +15,16 @@ function search(query) {
 
 function sort(query) {
     debug('sort setup');
-    var sort = null;
+    var options = {};
+    options.sort = null;
     if (query._sort) {
         var prefix = 1;
         if (query._sort.match(/-/)) prefix = -1;
         var field = query._sort.replace(/-|\s/g, '');
-        sort = {};
-        sort[field] = prefix;
+        options.sort = {};
+        options.sort[field] = prefix;
     }
-    return sort;
+    return options.sort;
 }
 
 //new fucntion for cors
