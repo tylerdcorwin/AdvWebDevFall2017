@@ -5,15 +5,15 @@ class Controller {
     }
 
     home() {
-        return this.Model.getReviewList()
+        return this.Model.getTodoList()
     }
-
-    add() {
-        this.Model.clearDataBindModel() //clears all data, if commented out the page saves the state that it was in
+    
+    add() { 
+        this.Model.clearDataBindModel()
         return window.Promise.resolve()
     }
-
-    update() {
+    
+    update() {        
         return this.Model.updatePageLoad()
     }
 
